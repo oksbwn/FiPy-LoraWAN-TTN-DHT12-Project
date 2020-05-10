@@ -1,4 +1,4 @@
-# FiPy LoraWAN TTN DHT12 Project
+# FiPy LoRaWAN TTN DHT12 Project
 DHT12 and FiPy Connection Daigram, 
 
 ![Image](DHT12_FiPy_Connection_Diagram.png)

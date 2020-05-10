@@ -31,8 +31,11 @@ lora_socket.setsockopt(socket.SOL_LORA, socket.SO_DR, 5)
 # (waits for the data to be sent and for the 2 receive windows to expire)
 lora_socket.setblocking(True)
 data = i2c.readfrom_mem(0x5c, 0x00, 5)
-
-lora_socket.send(data)
+try:
+    lora_socket.send(data) 
+    lora.nvram_save()
+except OSError as e:
+    print(e)    
 lora_socket.setblocking(False)
 
 # get any data received (if any...)
@@ -43,5 +46,4 @@ pycom.heartbeat(True)
 time.sleep(10) #Delay to help if you want to updat the scripts as this is not possible if the controller gets into deepsleep
 # lte = LTE()
 # lte.deinit(detach=True, reset = False)
-lora.nvram_save()
 machine.deepsleep(900000)

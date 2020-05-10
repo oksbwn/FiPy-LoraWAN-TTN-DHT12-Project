@@ -1,7 +1,11 @@
 # FiPy LoraWAN TTN DHT12 Project
 DHT12 and FiPy Connection Daigram, 
 
-![Image](FiPy-USB_UART-Connection.png)
+![Image](DHT12_FiPy_Connection_Diagram.png)
+
+The data flow from the DHT12 senor to the ThingSPeak charts looks like, 
+
+![Image](DataFlow.PNG)
 
 The JS code used in TTN decoder function is, 
 
